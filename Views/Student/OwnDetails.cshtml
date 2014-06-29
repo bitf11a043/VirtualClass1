@@ -1,4 +1,4 @@
-@model TermProject1._1.Models.Student
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -7,17 +7,17 @@
     <ul>
     <li><a href="/Home/Index">Home</a></li>
     <li><a href="/Home/Logout">Logout</a></li>
+    <li><a href="/Home/FilesUploaded">Uploaded Files</a></li>
     <li><a href="/Home/AboutUs">About Us</a></li>
     <li><a href="/Home/ContactUs">Contact Us</a></li>
-        </ul>
+    </ul>
     
 }
-
 <!DOCTYPE html>
 
 <html>
 <head>
-    <title>Delete Student</title>
+   <title>Student Details</title>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <meta http-equiv="imagetoolbar" content="no" />
@@ -45,35 +45,31 @@
     </script>
 </head>
 <body>
-<div class="extra">
-        <div class="content-bg">
-                <div class="main">
-                    <div class="container_12">
-                        <div class="wrapper">
-                        	<article class="grid_8">
-                            	<h3>SignUp</h3>
-                                
-                                 @using (Html.BeginForm("DeleteSTD", "Teacher", FormMethod.Post, new { Class = "signup-form2" }))
-                                     {
-                                <!--><form id="add-form2" method="post" enctype="multipart/form-data" action="../Teacher/DeleteSTD">  <-->                  
-                                    <fieldset>
-                                       <legend>Delete Student</legend>
-                                         @Html.Label("User Name",new {@class="text-form"})
-                                         @Html.EditorFor(m => m.username,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.username,"",new {@class="text-form"})
-                                         <div class="buttons2">
-                                         <input type="submit" name="submit" value="DELETE" />
-                                        </div>      
-                                    </fieldset>	
-                                 }
-  
-                            </article>                           
-                        </div>
-                    </div>
-                </div>
-                <!--><div class="block"></div><-->
-            </div>
-    </div>
+<div class="wrapper col3">
+  <div id="homecontent">
+    <div class="fl_left">
+      <div class="column2">
+    <table style="margin-right:400px" border="1">
+   @foreach (var x in Model)                           
+    {
+            
+                
+         <tr><td><p>Student ID: </p></td><td>@x.Id</td></tr>
+          
+          <tr><td><p >Student Name: </p></td><td>@x.name</td></tr>
+          <tr><td><p >Student Username :</p></td><td>@x.username</td></tr>
+		  <tr><td><p>Student's Email :</p> </td><td>@x.email</td></tr>
+          <tr><td><p>Students Age : </p> </td><td>@x.age</td></tr>
+        <tr><td><p>Students DOB : </p> </td><td>@x.dob</td></tr>
+        <tr><td><p>Students Gender : </p> </td><td>@x.gender</td></tr>
+        <tr><td><p>Students's Teacher ID : </p> </td><td>@x.TId</td></tr>
+   }
+      </table>
+                               
+                                    
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
 </body>
 </html>
-

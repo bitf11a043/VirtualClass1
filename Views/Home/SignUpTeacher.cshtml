@@ -82,14 +82,13 @@
                                 <!--<form id="signUp-form2" method="post" enctype="multipart/form-data" action="../Home/Register"> -->
                                      @using (Html.BeginForm("RegisterTeacher", "Home", FormMethod.Post, new { Class = "signup-form2" }))
                                      {
+                                         
                                          <table>
                                          <tr><td>
                                          @Html.Label("Name",new {@class="text-form"})
                                          @Html.EditorFor(m => m.name,"",new {@class="text-form"})
                                          @Html.ValidationMessageFor(m => m.name,"",new {@class="text-form"})
-                                             </td></tr>
-                                        
-                                         
+                                             </td></tr>                         
                                          <tr><td>
                                          @Html.Label("User Name",new {@class="text-form"})
                                          @Html.EditorFor(m => m.username,"",new {@class="text-form"})
@@ -149,7 +148,7 @@
                 <!--><div class="block"></div><-->
             </div>
     
-        
+        @Scripts.Render("~/bundles/jqueryval")
         <!--><script type="text/javascript"> Cufon.now(); </script><--> 
         </body> 
 </html>

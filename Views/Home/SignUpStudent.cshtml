@@ -89,7 +89,7 @@
                                              <tr><td>
                                          @Html.Label("Name",new {@class="text-form"})
                                          @Html.EditorFor(m => m.name,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.name,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.name,"")
                                         </td></tr>
                                          
                                          <tr><td>
@@ -104,19 +104,19 @@
                                         <tr><td>
                                          @Html.Label("Email ID",new {@class="text-form"})
                                          @Html.EditorFor(m => m.email,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.email,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.email,"")
                                           </td></tr> 
                                         
                                          <tr><td>
                                          @Html.Label("Date of Birth",new {@class="text-form"})
                                          @Html.EditorFor(m => m.dob,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.dob,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.dob,"")
                                              </td></tr>
                                          
                                              <tr><td>                                      
                                          @Html.Label("Password",new {@class="text-form"})
                                          @Html.PasswordFor(m => m.password)
-                                         @Html.ValidationMessageFor(m => m.password,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.password,"")
                                        </td></tr>
                                         
                                        
@@ -124,13 +124,13 @@
                                          <tr><td>
                                          @Html.Label("Age",new {@class="text-form"})
                                          @Html.EditorFor(m => m.age,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.age,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.age,"")
                                           </td></tr>   
                                          
                                              <tr><td>
                                          @Html.Label("Teacher ID",new {@class="text-form"})
                                          @Html.EditorFor(m => m.TId,"",new {@class="text-form"})
-                                         @Html.ValidationMessageFor(m => m.TId,"",new {@class="text-form"})
+                                         @Html.ValidationMessageFor(m => m.TId,"")
                                                  </td></tr>
                                           </table>   
                                          
@@ -149,6 +149,6 @@
                 </div>
                 <!--><div class="block"></div><-->
             </div>
-
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html>
